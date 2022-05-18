@@ -17,14 +17,14 @@ The main script is as follows.
 
 ```applescript
 tell application "Finder"
-	set n to properties of Finder window 1
-	set p to target of n
-	open p using application file "Terminal.app" of folder "Utilities" of folder "Applications" of startup disk
+	set theWindow to properties of Finder window 1
+	set thePath to target of theWindow
+	open thePath using application file "Terminal.app" of folder "Utilities" of folder "Applications" of startup disk
 end tell
 ```
 
 If you launch other applications, it may be possible to change the following part to the path of application you want.
 ```
-open p using application file "Terminal.app" of folder "Utilities" of folder "Applications" of startup disk
+open thePath using application file "Terminal.app" of folder "Utilities" of folder "Applications" of startup disk
 ```
 
