@@ -1,24 +1,33 @@
 #!/bin/bash
+set -euo pipefail
 
+# ==== Configuration ====
 SCRIPT1_FILE="terminal2.applescript"
 SCRIPT2_FILE="vscode2.applescript"
 
 APP1_NAME="OpenTerminalHere"
 APP2_NAME="OpenVSCodeHere"
 
-ICON1_FILE="Terminal.icns"
-ICON2_FILE="Code.icns"
+APP1="${APP1_NAME}.app"
+APP2="${APP2_NAME}.app"
 
-APP1="$APP1_NAME.app"
-APP2="$APP2_NAME.app"
+# Installation directory if needed (not currently used)
+# INSTALL_DIR="$HOME/Applications"   # or /Applications
 
-APPLICATIONS_DIR="/Applications"
+# ==== Build ====
+echo "Building ${APP1}..."
+osacompile -o "${APP1}" "${SCRIPT1_FILE}"
 
-osacompile -o $APP1 $SCRIPT1_FILE
-osacompile -o $APP2 $SCRIPT2_FILE
+echo "Building ${APP2}..."
+osacompile -o "${APP2}" "${SCRIPT2_FILE}"
 
-cp $ICON1_FILE $APP1/Contents/Resources/applet.icns
-touch $APP1
+echo "Done."
+echo "Created applications:"
+echo "  ${APP1}"
+echo "  ${APP2}"
 
-cp $ICON2_FILE $APP2/Contents/Resources/applet.icns
-touch $APP2
+# ==== (Optional) Uncomment below to install ====
+# mkdir -p "${INSTALL_DIR}"
+# mv -f "${APP1}" "${INSTALL_DIR}/"
+# mv -f "${APP2}" "${INSTALL_DIR}/"
+# echo "Installed to ${INSTALL_DIR}"
