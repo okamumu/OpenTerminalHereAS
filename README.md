@@ -3,6 +3,10 @@
 An application to open the current folder with Terminal.  
 This is a hommage to the original OpenTerminalHere.
 
+## Demo
+
+![Image](https://github.com/user-attachments/assets/850407b7-86e3-40e8-ae59-6ab744adf976)
+
 ## Install
 
 ### 1. Build the applications
