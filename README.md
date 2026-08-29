@@ -23,6 +23,7 @@ After building, you will get:
 
   * `OpenTerminalHere.app`
   * `OpenVSCodeHere.app` (if included)
+  * `OpenZedHere.app` (if included)
 
 Move them to `/Applications` or `~/Applications`.
 
@@ -43,7 +44,7 @@ Drag the `.app` file to the Finder toolbar while holding **Command (⌘)**.
 
 ### 5\. Use it
 
-Click the icon on the Finder toolbar to open the current folder in Terminal or VS Code.
+Click the icon on the Finder toolbar to open the current folder in Terminal, VS Code, or Zed.
 
 ## Prerequisites
 
@@ -56,4 +57,14 @@ To use `OpenVSCodeHere.app`, you need to enable the `code` command in your termi
 3. Type "shell command" and select **"Shell Command: Install 'code' command in PATH"**
 
 After this setup, the `code` command will be available in your terminal, and `OpenVSCodeHere.app` will work correctly.
+
+### For OpenZedHere.app
+
+To use `OpenZedHere.app`, you need to enable the `zed` command in your terminal:
+
+1. Open Zed
+2. Choose **Zed > Install CLI** from the menu bar (or press **Cmd + Shift + P** and type "install cli")
+3. Enter your password if prompted
+
+After this setup, the `zed` command will be available in your terminal, and `OpenZedHere.app` will work correctly.
 
